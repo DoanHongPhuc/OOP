@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="251.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.gui.MyController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="57.0" layoutY="27.0" prefHeight="49.0" prefWidth="155.0" text="Input id: " textAlignment="CENTER" textFill="#d32626">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_id" layoutX="60.0" layoutY="101.0" />
+      <Button fx:id="btn_submit" layoutX="82.0" layoutY="181.0" mnemonicParsing="false" onAction="#submitDelete" prefHeight="39.0" prefWidth="105.0" text="submit" />
+   </children>
+</AnchorPane>

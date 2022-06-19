@@ -10,7 +10,7 @@ import java.util.List;
 import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 import hust.soict.hedspi.aims.order.Order;
 import hust.soict.hedspi.aims.media.Book;
-import hust.soict.hedspi.aims.media.media;
+import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Track;
 import hust.soict.hedspi.aims.media.CompactDisc;
 
@@ -21,12 +21,12 @@ public static void main(String[] args) {
 	ArrayList <String> authors = new ArrayList<String>();
 	authors.add("Van Cao");
 	authors.add("To Huu");
-	ArrayList <media> bookList = new ArrayList<media>();
+	ArrayList <Media> bookList = new ArrayList<Media>();
 	Book book1 = new Book("Tay Tien","Documentory",10.5f,authors,1);
 	Book book2 = new Book("Tat Den","Documentory",15.5f,authors,2);
 	bookList.add(book1);
 	bookList.add(book2);
-	ArrayList <media> discList = new ArrayList<media>();
+	ArrayList <Media> discList = new ArrayList<Media>();
 	DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f,123);
 	discList.add(dvd1);
 

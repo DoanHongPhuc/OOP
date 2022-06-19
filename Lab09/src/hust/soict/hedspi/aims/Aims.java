@@ -1,5 +1,7 @@
 package hust.soict.hedspi.aims;
 import java.lang.reflect.Array;
+import javax.naming.LimitExceededException;
+
 import java.util.*;
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.order.Order;
@@ -20,22 +22,22 @@ public class Aims {
 		System.out.println("--------------------------------");
 	}
 	
-	public static void showBookList(ArrayList<media> BookList) {
+	public static void showBookList(ArrayList<Book> BookList) {
 		System.out.println("Book list: ");
 		System.out.println("--------------------------------");
 		for(int i=0;i<BookList.size();i++) {
-			System.out.println("Title:"+BookList.get(i).getTitle()+"ID: "+BookList.get(i).getId());
+			System.out.println("Title:"+BookList.get(i).getTitle()+" ID: "+BookList.get(i).getId());
 		}
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a id of book");
 		System.out.println("--------------------------------");
 	}
 	
-	public static void showDiscList(ArrayList<media> DiscList) {
-		System.out.println("Book list: ");
+	public static void showDiscList(ArrayList<DigitalVideoDisc> DiscList) {
+		System.out.println("Disc list: ");
 		System.out.println("--------------------------------");
 		for(int i=0;i<DiscList.size();i++) {
-			System.out.println("Title:"+DiscList.get(i).getTitle()+"ID: "+DiscList.get(i).getId());
+			System.out.println("Title:"+DiscList.get(i).getTitle()+" ID: "+DiscList.get(i).getId());
 		}
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a id of disc");
@@ -51,16 +53,16 @@ public class Aims {
 		return -1;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)throws LimitExceededException {
 		ArrayList <String> authors = new ArrayList<String>();
 		authors.add("Van Cao");
 		authors.add("To Huu");
-		ArrayList <media> bookList = new ArrayList<media>();
+		ArrayList <Book> bookList = new ArrayList<Book>();
 		Book book1 = new Book("Tay Tien","Documentory",10.5f,authors,1);
 		Book book2 = new Book("Tat Den","Documentory",15.5f,authors,2);
 		bookList.add(book1);
 		bookList.add(book2);
-		ArrayList <media> discList = new ArrayList<media>();
+		ArrayList <DigitalVideoDisc> discList = new ArrayList<DigitalVideoDisc>();
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King","Animation","Roger Allers",87,19.95f,123);
 		discList.add(dvd1);
 		//anOrder.addDigitalVideoDisc(dvd1); 
@@ -103,30 +105,38 @@ public class Aims {
 						int Idchoice;
 						while(true) {
 							showBookList(bookList);
+							int isTrue=0;
 							Idchoice=scanner.nextInt();
 							for(int i=0;i<bookList.size();i++) {
 								if (bookList.get(i).getId()==Idchoice) {
 									listOrder.get(index).addMedia(bookList.get(i));
-									break;
+									System.out.println("Add "+bookList.get(i).getTitle()+"in Order");
+									isTrue=1;
 								}
 							}
+							if(isTrue==0) {
 							System.out.println("Error!!! ID error");
-							
+							}
+							else break;
 						}
 					}
 					if(idType==2) {	
 						int Idchoice;
 						while(true) {
-							showBookList(discList);
+							showDiscList(discList);
+							int isTrue=0;
 							Idchoice=scanner.nextInt();
 							for(int i=0;i<discList.size();i++) {
 								if (discList.get(i).getId()==Idchoice) {
 									listOrder.get(index).addMedia(discList.get(i));
-									break;
+									System.out.println("Add "+discList.get(i).getTitle()+"in Order");
+									isTrue=1;
 								}
 							}
-							System.out.println("Error!!! ID error");
-							
+							if(isTrue==0) {
+								System.out.println("Error!!! ID error");
+								}
+								else break;
 						}
 					}
 					if(idType==3) {
@@ -171,7 +181,13 @@ public class Aims {
 							play = scanner.nextInt();
 						}
 						if(play == 1) {
-							cdNew.play();
+							try {
+								cdNew.play();
+							} catch (PlayerException e) {
+								// TODO Auto-generated catch block
+								//e.printStackTrace();
+								System.err.println("A problem occured: " + e);
+							}
 						}
 					}
 						

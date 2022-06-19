@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class Disc extends media{
+public class Disc extends Media{
 	private String director;
 	public Disc() {
 		

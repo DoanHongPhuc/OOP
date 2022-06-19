@@ -1,29 +1,30 @@
 package hust.soict.hedspi.aims.media;
 
-public abstract class media<T> implements Comparable<T>  {
+public abstract class Media implements Comparable  {
 	private String title;
 	private String category;
 	private float cost;
 	private int id;
 	private int length;
 	
-	public media() {
+	public Media() {
 		
 	}
-	public media (String titte) {
+	public Media (String titte) {
 		this.title = titte;
 	}
 	
-	public media (String title, String category) {
+	public Media (String title, String category) {
 		this(title);
 		this.category = category;
 	}
 	
-	public media(String title, String category, float cost, int id) {
+	public Media(String title, String category, float cost, int id) {
 		this(title,category);
+		this.id=id;
 		this.cost = cost;
 	}
-	public media(String title, String category, float cost, int id,int length ) {
+	public Media(String title, String category, float cost, int id,int length ) {
 		this(title,category,cost,id);
 		this.length = length;
 	}
@@ -39,7 +40,7 @@ public abstract class media<T> implements Comparable<T>  {
 	}
 	
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public int getLength() {
 		return length;
@@ -51,7 +52,14 @@ public abstract class media<T> implements Comparable<T>  {
 	
 	@Override
 	public boolean equals(Object obj) {
-		media tmp =(media) obj;
+		try {
+			Media tmp = (Media) obj;
+		} catch (ClassCastException e){
+			System.err.println("ERROR :" + e + " - Unable to cast type!");
+		} catch (NullPointerException e){
+			System.err.println("ERROR :" + e + " - Pointing to null object");
+		}
+		Media tmp =(Media) obj;
 		if(tmp==null) return false;
 		if(this.id==tmp.id) return true;
 		else return false;
@@ -84,7 +92,14 @@ public abstract class media<T> implements Comparable<T>  {
     }
 	
 	public int compareTo(Object obj) {
-		media tmp = (media) obj;
+		try {
+			Media tmp = (Media) obj;
+		} catch (ClassCastException e){
+			System.err.println("ERROR :" + e + " - ???Unable to cast type???");
+		} catch (NullPointerException e){
+			System.err.println("ERROR :" + e + " - ???Pointing to null object???");
+		}
+		Media tmp = (Media) obj;
 		if ( tmp == null) return 0;
 		else {
 			

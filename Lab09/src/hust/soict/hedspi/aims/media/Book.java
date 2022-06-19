@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Book extends media {
+public class Book extends Media {
 	private List<String> authors = new ArrayList<String>();
 	private String content;
 	private List<String> contentTokens = new ArrayList<String>();

@@ -1,7 +1,10 @@
 package hust.soict.hedspi.aims.order;
-import hust.soict.hedspi.aims.media.*;
-import hust.soict.hedspi.aims.utils.MyDate;
 import java.util.ArrayList;
+
+import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.Media;
+import hust.soict.hedspi.aims.utils.MyDate;
 
 
 public class Order {
@@ -9,7 +12,7 @@ public class Order {
 	public static final int MAX_LIMITED_ORDERS = 5;
 	private static int nbOrders = 0;
 	
-	private ArrayList<media> itemOrdered = new ArrayList<media>();
+	private ArrayList<Media> itemOrdered = new ArrayList<Media>();
 	private MyDate dateOrdered;
 	private int id;
 	
@@ -25,19 +28,18 @@ public class Order {
 	public Order() {
 		if(nbOrders > MAX_LIMITED_ORDERS - 1) {
 			System.out.println( "You can't create more order"); 
-			
 		}
 		else {
 			nbOrders += 1;
 		}
 	}
 	
-	public ArrayList<media> getItemOrdered() {
+	public ArrayList<Media> getItemOrdered() {
 		return itemOrdered;
 	}
 
 
-	public void setItemOrdered(ArrayList<media> itemOrdered) {
+	public void setItemOrdered(ArrayList<Media> itemOrdered) {
 		this.itemOrdered = itemOrdered;
 	}
 
@@ -66,7 +68,7 @@ public class Order {
 		}
 	}
 	
-	public void addMedia(media book) {
+	public void addMedia(Media book) {
 		if(this.itemOrdered.size() < MAX_NUMBER_ORDERED && !itemOrdered.contains(book)) {
 			this.itemOrdered.add(book);
 		}
@@ -117,9 +119,9 @@ public class Order {
 	}
 	//LAB05
 	
-	public media getALuckyItem() {
+	public Media getALuckyItem() {
 		int length = itemOrdered.size();
-        media item = itemOrdered.get((int) (length* Math.random()));
+        Media item = itemOrdered.get((int) (length* Math.random()));
         return item;
 	}
 	
