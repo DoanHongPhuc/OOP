@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="377.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.gui.MyController">
+   <children>
+      <Label alignment="CENTER" layoutX="125.0" layoutY="29.0" prefHeight="38.0" prefWidth="121.0" text="Book List" textAlignment="CENTER" textFill="#e80a0a">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="107.0" layoutY="116.0" mnemonicParsing="false" onAction="#addBook1" prefHeight="44.0" prefWidth="157.0" text="1. Tay Tien">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="107.0" layoutY="197.0" mnemonicParsing="false" onAction="#addBook2" prefHeight="44.0" prefWidth="157.0" text="2. Tat Den">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="19.0" layoutY="67.0" prefHeight="32.0" prefWidth="327.0" text="Click to add books to order">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

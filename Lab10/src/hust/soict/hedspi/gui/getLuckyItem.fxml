@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="329.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.gui.MyController">
+   <children>
+      <Label alignment="CENTER" prefHeight="38.0" prefWidth="300.0" text="Lucky Item" textFill="#e40505">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="48.0" prefHeight="17.0" prefWidth="300.0" text="Cost of Order">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cost" layoutX="76.0" layoutY="85.0" />
+      <Label alignment="CENTER" layoutX="-1.0" layoutY="123.0" prefHeight="17.0" prefWidth="300.0" text="Size of Order">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="size" layoutX="75.0" layoutY="165.0" />
+      <Button layoutX="124.0" layoutY="205.0" mnemonicParsing="false" onAction="#submitLucky" text="Submit" />
+   </children>
+</AnchorPane>
