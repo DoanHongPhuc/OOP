@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="476.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.gui.MyController">
+   <children>
+      <Button layoutX="83.0" layoutY="107.0" mnemonicParsing="false" onAction="#CreateNewOder" prefHeight="39.0" prefWidth="191.0" text="Create new order">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="103.0" layoutY="22.0" prefHeight="35.0" prefWidth="150.0" text="MENU" textAlignment="JUSTIFY" textFill="#cd5418">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="83.0" layoutY="163.0" mnemonicParsing="false" onAction="#AddItem" prefHeight="39.0" prefWidth="191.0" text="Add item to the order">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="83.0" layoutY="217.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="39.0" prefWidth="191.0" text="Delete item by ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="83.0" layoutY="272.0" mnemonicParsing="false" onAction="#displayOrder" prefHeight="39.0" prefWidth="191.0" text="Display the items list of order" />
+      <Button layoutX="113.0" layoutY="415.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="39.0" prefWidth="127.0" text="Exit" />
+      <Label fx:id="thong_bao" alignment="CENTER" layoutX="12.0" layoutY="59.0" prefHeight="30.0" prefWidth="329.0" textFill="#0dd7d0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="83.0" layoutY="324.0" mnemonicParsing="false" onAction="#getLuckyItem" prefHeight="39.0" prefWidth="191.0" text="Get Lucky Item" />
+   </children>
+</AnchorPane>

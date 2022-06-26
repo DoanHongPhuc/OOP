@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="404.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.gui.MyController">
+   <children>
+      <Label alignment="CENTER" layoutX="80.0" layoutY="35.0" prefHeight="37.0" prefWidth="175.0" text="Choose Type Item" textFill="#e41414">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="83.0" layoutY="134.0" mnemonicParsing="false" onAction="#onClickBook" prefHeight="43.0" prefWidth="169.0" text="BOOK" />
+      <Button layoutX="83.0" layoutY="202.0" mnemonicParsing="false" onAction="#onClickDisc" prefHeight="43.0" prefWidth="169.0" text="DVD" />
+      <Button layoutX="83.0" layoutY="271.0" mnemonicParsing="false" onAction="#addCD" prefHeight="43.0" prefWidth="169.0" text="CD" />
+   </children>
+</AnchorPane>
