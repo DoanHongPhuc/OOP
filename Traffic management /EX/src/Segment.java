@@ -26,10 +26,13 @@ public class Segment implements Environment{
 	
 	public ArrayList<I> block(long tS, long tE) {
 		long time;
+		int sumLanevMAX=0;
+		int sumAlleyMAX=0;
 		ArrayList<I> result = new ArrayList<I>();
 		time = tE - tS;
 		if (time>1800 && time<43200) {
 			for(Lane lane: this.listLane) {
+				sumLanevMAX +=lane.getVMAX();
 				if(tS<lane.getTS()&&tE>lane.getTS()) {
 					for(Bridge bridge:lane.getlistBridge()) {
 						result.add(bridge);
@@ -39,8 +42,21 @@ public class Segment implements Environment{
 					}
 				}
 			}
+			for(I i: result) {
+				if(i instanceof Alley) {
+					Alley alley = (Alley) i;
+					sumAlleyMAX =alley.getVMAX()+sumAlleyMAX;
+				}
+				
+			}
+			if(sumLanevMAX>sumAlleyMAX) {
+				System.out.println("Tong van toc cac Alley bi cam be hon tong van toc cua cac Lane.");
+				return null;
+			}
+			
 		}
-		else System.out.println("Thoi gian cam duong qua it hoac qua dai");
+		
+		else System.out.println("Thoi gian cam duong qua it hoac qua dai.");
 		
 		return result;
 	}
